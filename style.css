@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  width: 400px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 1px solid black;
+  padding: 10px;
+}
+#screen {
+  width: 400px;
+  padding: 10px;
+  text-align: center;
+  outline: 1px solid black;
+  margin-left: auto;
+  margin-bottom: 0px;
+  margin-right: auto;
+}
