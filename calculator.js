@@ -5,6 +5,27 @@ let decimalFlag = 0;
 const container = document.body.querySelector('.container');
 let buttons = container.getElementsByClassName('digit');
 const screen = document.body.querySelector('#screen');
+const exp = ["+", "-", "/", "=", "*", "Enter"]
+
+// Keyboard Support
+document.addEventListener('keydown', (event) => {
+  console.log(event.key);
+  if ((exp.includes(event.key)) & event.key != '.') {
+    cal(event.key);
+  } else if (!isNaN(event.key) || event.key == '.') {
+    if (event.key == '.') {
+      if (decimalFlag) {
+        return 0;
+      } else {
+        decimalFlag = 1;
+      }
+    }
+    val += event.key;
+    screen.innerText = val;
+  }
+})
+
+//Buttons
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function() {
     if (isNaN(this.innerText) & this.innerText != '.') {
